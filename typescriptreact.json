@@ -1,37 +1,4 @@
 {
-  "Standard React Functional Component with its Props interface and SCSS-module": {
-    "prefix": "fcs",
-    "body": [
-      "import { FC, PropsWithChildren } from \"react\";",
-      "import classes from \"${TM_FILENAME_BASE}.module.scss\";",
-      "",
-      "//#region",
-      "// Other independent members go here",
-      "//#endregion",
-      "",
-      "interface ${TM_FILENAME_BASE}Props extends PropsWithChildren {",
-      "  // Prop types goes here",
-      "  exampleProp?: string;",
-      "}",
-      "",
-      "const ${TM_FILENAME_BASE}: FC<${TM_FILENAME_BASE}Props> = ({",
-      "  // Props goes here",
-      "  exampleProp = \"Greetings!\",",
-      "  children,",
-      "}) => {",
-      "  return (",
-      "    <div className={classes.${TM_FILENAME_BASE/(.)/${1:/downcase}/}}>",
-      "      {exampleProp}",
-      "      Some very long content goes here",
-      "      {children}",
-      "    </div>",
-      "  );",
-      "};",
-      "",
-      "export default ${TM_FILENAME_BASE};",
-      "",
-    ]
-  },
   "Standard React Functional Component with its Props interface": {
     "prefix": "fc",
     "body": [
@@ -63,5 +30,44 @@
       "export default ${TM_FILENAME_BASE};",
       "",
     ]
-  }
+  },
+  "Standard React Functional Component with its Props interface and SCSS-module": {
+    "prefix": "fcs",
+    "body": [
+      "import { FC, PropsWithChildren } from \"react\";",
+      "import classes from \"./${TM_FILENAME_BASE}.module.scss\";",
+      "",
+      "//#region",
+      "// Other independent members go here",
+      "//#endregion",
+      "",
+      "interface ${TM_FILENAME_BASE}Props extends PropsWithChildren {",
+      "  // Prop types goes here",
+      "  exampleProp?: string;",
+      "}",
+      "",
+      "const ${TM_FILENAME_BASE}: FC<${TM_FILENAME_BASE}Props> = ({",
+      "  // Props goes here",
+      "  exampleProp = \"Greetings!\",",
+      "  children,",
+      "}) => {",
+      "  return (",
+      "    <div className={classes.${TM_FILENAME_BASE/(.)/${1:/downcase}/}}>",
+      "      {exampleProp}",
+      "      Some very long content goes here",
+      "      {children}",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export default ${TM_FILENAME_BASE};",
+      "",
+    ]
+  },
+  "useState": {
+    "prefix": "usest",
+    "body": [
+      "const [$1, set${1/(.*)/${1:/capitalize}/}] = useState($2);",
+    ]
+  },
 }
